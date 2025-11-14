@@ -75,6 +75,108 @@
             position: relative;
             z-index: 5;
         }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 80vh;
+                padding: 2rem 1rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+                color: #1d4ed8 !important;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem !important;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-content a {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            /* Navbar mobile */
+            .navbar-brand {
+                font-size: 1.25rem;
+            }
+            
+            /* Cards responsive */
+            .grid.md\\:grid-cols-2, .grid.md\\:grid-cols-3 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            /* Section padding */
+            section {
+                padding: 2rem 1rem !important;
+            }
+            
+            /* Typography responsive */
+            h2 {
+                font-size: 1.75rem !important;
+            }
+            
+            h3 {
+                font-size: 1.25rem !important;
+            }
+            
+            p, li {
+                font-size: 1rem !important;
+                line-height: 1.6;
+            }
+            
+            /* Images responsive */
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            /* Quote responsive */
+            blockquote {
+                padding: 1rem !important;
+                font-size: 1rem !important;
+                margin: 1.5rem 0 !important;
+            }
+            
+            /* Button responsive */
+            .scroll-to-top {
+                bottom: 15px;
+                right: 15px;
+                padding: 8px 12px;
+                font-size: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem !important;
+                color: #1d4ed8 !important;
+            }
+            
+            .hero-content p {
+                font-size: 1rem !important;
+            }
+            
+            /* Cards extra small screens */
+            .bg-gray-50 {
+                padding: 1rem !important;
+            }
+            
+            /* Footer responsive */
+            footer {
+                padding: 1.5rem 1rem !important;
+            }
+        }
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
@@ -110,26 +212,40 @@
 </head>
 <body class="bg-gray-50">
 
-    <!-- Navbar --><nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-700">Бостандық Философиясы</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#spinoza" class="text-gray-600 hover:text-blue-700 transition duration-300">Спиноза</a>
-                <a href="#existentialism" class="text-gray-600 hover:text-blue-700 transition duration-300">Экзистенциализм</a>
-                <a href="#dimensions" class="text-gray-600 hover:text-blue-700 transition duration-300">Өлшемдері</a>
-                <a href="#kazakh-philosophy" class="text-gray-600 hover:text-blue-700 transition duration-300">Қазақ Философиясы</a>
-                <a href="#conclusion" class="text-gray-600 hover:text-blue-700 transition duration-300">Қорытынды</a>
+    <!-- Navbar -->
+    <nav id="navbar" class="bg-white shadow-lg fixed w-full z-50 transition-transform duration-300">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-center items-center">
+            <div class="hidden md:flex space-x-4 lg:space-x-8">
+                <a href="#spinoza" class="text-gray-600 hover:text-blue-700 transition duration-300 text-sm lg:text-base">Спиноза</a>
+                <a href="#existentialism" class="text-gray-600 hover:text-blue-700 transition duration-300 text-sm lg:text-base">Экзистенциализм</a>
+                <a href="#dimensions" class="text-gray-600 hover:text-blue-700 transition duration-300 text-sm lg:text-base">Өлшемдері</a>
+                <a href="#kazakh-philosophy" class="text-gray-600 hover:text-blue-700 transition duration-300 text-sm lg:text-base">Қазақ Философиясы</a>
+                <a href="#conclusion" class="text-gray-600 hover:text-blue-700 transition duration-300 text-sm lg:text-base">Қорытынды</a>
             </div>
-            <!-- Mobile Menu Button (Optional, for a full site) --><button class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none" onclick="toggleMobileMenu()">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
             </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden bg-white shadow-lg hidden transition-all duration-300">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#spinoza" class="block py-2 text-gray-600 hover:text-blue-700 transition duration-300" onclick="closeMobileMenu()">Спиноза</a>
+                <a href="#existentialism" class="block py-2 text-gray-600 hover:text-blue-700 transition duration-300" onclick="closeMobileMenu()">Экзистенциализм</a>
+                <a href="#dimensions" class="block py-2 text-gray-600 hover:text-blue-700 transition duration-300" onclick="closeMobileMenu()">Өлшемдері</a>
+                <a href="#kazakh-philosophy" class="block py-2 text-gray-600 hover:text-blue-700 transition duration-300" onclick="closeMobileMenu()">Қазақ Философиясы</a>
+                <a href="#conclusion" class="block py-2 text-gray-600 hover:text-blue-700 transition duration-300" onclick="closeMobileMenu()">Қорытынды</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero-section flex items-center justify-center text-center">
         <div class="hero-content container mx-auto px-6 py-16">
-            <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4 text-gray-800">Бостандық: Философиялық Саяхат</h1>
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4 text-blue-700">Бостандық: Философиялық Саяхат</h1>
             <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-600">
                 Адам болмысының іргелі негізі — еркіндік ұғымының тарихи және заманауи түсініктерін зерттейміз.
             </p>
@@ -293,10 +409,11 @@
         &uarr;
     </button>
 
-    <!-- Footer --><footer class="bg-gray-800 text-white py-8 text-center mt-12">
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-700 py-8 text-center mt-12 border-t border-gray-200">
         <div class="container mx-auto px-6">
             <p>&copy; 2025 Бостандық Философиясы. Барлық құқықтар қорғалған.</p>
-            <p class="mt-2 text-sm">Философиялық зерттеу және талдау негізінде жасалған.</p>
+            <p class="mt-2 text-sm text-gray-500">Философиялық зерттеу және талдау негізінде жасалған.</p>
         </div>
     </footer>
 
@@ -313,13 +430,36 @@
 
         // Show/hide scroll to top button
         const scrollToTopButton = document.querySelector('.scroll-to-top');
-
+        
+        // Hide/show navbar on scroll
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+        
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
+            const currentScrollY = window.scrollY;
+            
+            // Show/hide scroll to top button
+            if (currentScrollY > 300) {
                 scrollToTopButton.classList.add('show');
             } else {
                 scrollToTopButton.classList.remove('show');
             }
+            
+            // Hide/show navbar based on scroll direction
+            if (currentScrollY > 100) { // Only start hiding after 100px scroll
+                if (currentScrollY > lastScrollY) {
+                    // Scrolling down - hide navbar
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up - show navbar
+                    navbar.style.transform = 'translateY(0)';
+                }
+            } else {
+                // Always show navbar when near top
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollY = currentScrollY;
         });
 
         function scrollToTop() {
@@ -328,6 +468,27 @@
                 behavior: 'smooth'
             });
         }
+
+        // Mobile menu functions
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuButton = event.target.closest('button');
+            
+            if (!mobileMenu.contains(event.target) && !menuButton) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
