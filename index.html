@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бостандық Философиясы: Терең Түсінік</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="4067573.png">
+    <link rel="shortcut icon" type="image/png" href="4067573.png">
+    <link rel="apple-touch-icon" href="4067573.png">
+    
+    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Open Sans для всего текста --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+        h1, h2, h3 {
+            font-family: 'Open Sans', sans-serif; /* Единый шрифт */
+            font-weight: 800; /* Используем жирное начертание для заголовков */
+        }
+        .hero-section {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(99, 102, 241, 0.3)), url('https://images.unsplash.com/photo-1454942901704-3c94c12b46b2?auto-format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 2px, transparent 2px);
+            background-size: 50px 50px;
+            animation: float 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 69, 19, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        .hero-text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Добавил тень для текста */
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3B82F6; /* blue-500 */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            line-height: 1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .scroll-to-top.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navbar --><nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-700">Бостандық Философиясы</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#spinoza" class="text-gray-600 hover:text-blue-700 transition duration-300">Спиноза</a>
+                <a href="#existentialism" class="text-gray-600 hover:text-blue-700 transition duration-300">Экзистенциализм</a>
+                <a href="#dimensions" class="text-gray-600 hover:text-blue-700 transition duration-300">Өлшемдері</a>
+                <a href="#kazakh-philosophy" class="text-gray-600 hover:text-blue-700 transition duration-300">Қазақ Философиясы</a>
+                <a href="#conclusion" class="text-gray-600 hover:text-blue-700 transition duration-300">Қорытынды</a>
+            </div>
+            <!-- Mobile Menu Button (Optional, for a full site) --><button class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white flex items-center justify-center text-center">
+        <div class="hero-content container mx-auto px-6 py-16">
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4 hero-text-shadow">Бостандық: Философиялық Саяхат</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto hero-text-shadow">
+                Адам болмысының іргелі негізі — еркіндік ұғымының тарихи және заманауи түсініктерін зерттейміз.
+            </p>
+            <a href="#spinoza" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                Зерттеуді Бастау
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content --><main class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Section 2.1: Spinoza --><section id="spinoza" class="bg-white rounded-xl shadow-xl p-8 md:p-12 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-6 text-center">
+                Спиноза және Детерминизм: Ұғынылған Қажеттілік
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="mb-4 text-lg leading-relaxed">
+                        Еркіндік философиясы – этикалық таңдаудың іргетасы. Адам тек еркін болғанда ғана оның әрекетіне моральдық баға беруге болады. Алайда, «еркіндік» дегеніміз не? Бұл сұрақ философия тарихындағы ең күрделі мәселелердің бірі – детерминизм (барлық оқиғалардың себеп-салдарлық байланыспен алдын ала анықталуы) мен ерік бостандығының антиномиясын тудырды.
+                    </p>
+                    <p class="mb-4 text-lg leading-relaxed">
+                        Егер әлем толық детерминистік заңдарға бағынса, онда адамның таңдау еркіндігі – тек иллюзия ма? Бұл мәселеге <strong>Бенедикт Спиноза</strong> ерекше жауап берді. Ол өзінің қатаң детерминистік философиясы (монизм) шеңберінде еркіндікке орын тапты.
+                    </p>
+                </div>
+                <div>
+                    <img src="Spinoza.jpg" alt="Бенедикт Спиноза портреті" class="rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                </div>
+            </div>
+            
+            <blockquote class="border-l-4 border-blue-500 bg-blue-50 p-6 rounded-lg my-8 italic text-xl text-gray-700 shadow-md">
+                "Спиноза үшін еркіндік – бұл қажеттіліктің болмауы емес, керісінше, <strong>«еркіндік – ұғынылған қажеттілік»</strong>."
+            </blockquote>
+            
+            <p class="mb-4 text-lg leading-relaxed">
+                Оның ойынша, адам табиғаттың бір бөлігі және сол заңдарға бағынады. Адамның еркін болмауы (құлдығы) – оның өз табиғатын түсінбеуінен, аффектілерге (құмарлық, қорқыныш, ашу) бой алдыруынан туындайды. Ал адам өз ақыл-ойы арқылы осы заңдылықтарды, өз табиғатын және аффектілерінің себептерін <strong>ұғынғанда</strong>, ол сыртқы күштердің құлы болудан қалады да, сол заңдылықтарға сәйкес саналы түрде әрекет ете бастайды. Бұл – ақыл-ой арқылы қол жеткізілетін ең жоғарғы бостандық.
+            </p>
+        </section>
+
+        <!-- Section 2.2: Existentialism --><section id="existentialism" class="bg-white rounded-xl shadow-xl p-8 md:p-12 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-8 text-center">
+                Экзистенциализмдегі Еркіндік: Болмыс және Таңдау
+            </h2>
+            <p class="mb-8 text-lg leading-relaxed text-center max-w-3xl mx-auto">
+                ХХ ғасырда еркіндік мәселесі экзистенциализм философиясында жаңа, түбегейлі мағынаға ие болды. Экзистенциалистер үшін еркіндік – бұл адамның таңдауы ғана емес, оның <strong>болмысының</strong> өзі, оның тағдыры.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Sartre -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Жан-Поль Сартр</h3>
+                    <p class="mb-3 text-lg leading-relaxed flex-grow">
+                        Сартр үшін еркіндік абсолютті: <strong class="italic">«Тіршілік мәннен бұрын келеді»</strong>. Адам өз әрекеттерімен өзінің «мәнін» қалыптастырады және «бостандыққа үкім етілген», абсолютті жауапкершілікке ие.
+                    </p>
+                    <img src="jean paul sartr.jpg" alt="Жан-Поль Сартр" class="rounded-lg mt-4 w-full h-48 object-cover">
+                </div>
+                <!-- Camus -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Альберт Камю</h3>
+                    <p class="mb-3 text-lg leading-relaxed flex-grow">
+                        Камю еркіндікті <strong>абсурд</strong> арқылы қарастырады. Өмірдің мәнсіздігін мойындау адамды үмітсіздікке емес, керісінше, тағдырға қарсы «бас көтеру» арқылы бостандыққа жетелейді.
+                    </p>
+                    <img src="albert.jpg" alt="Альберт Камю" class="rounded-lg mt-4 w-full h-48 object-cover">
+                </div>
+                <!-- Berdyaev -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Николай Бердяев</h3>
+                    <p class="mb-3 text-lg leading-relaxed flex-grow">
+                        Бердяев еркіндіктің <strong>иерархиясын</strong> көрсетеді: төменгі (формалды таңдау) және жоғарғы (шығармашылық, ізгіліктегі) еркіндік. Жоғарғы еркіндікке өту – адамның мақсаты.
+                    </p>
+                    <img src="nikolay.jpg" alt="Николай Бердяев" class="rounded-lg mt-4 w-full h-48 object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2.3: Dimensions of Freedom --><section id="dimensions" class="bg-white rounded-xl shadow-xl p-8 md:p-12 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-8 text-center">
+                Еркіндіктің Өлшемдері: Оң және Теріс Бостандық
+            </h2>
+            <p class="mb-8 text-lg leading-relaxed text-center max-w-3xl mx-auto">
+                Әлеуметтік-саяси философияда еркіндік ұғымы екі негізгі модель арқылы талданады, бұл оның әртүрлі формаларын ажыратуға мүмкіндік береді.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">«Теріс еркіндік» (Negative Freedom)</h3>
+                    <p class="text-lg leading-relaxed">Бұл «...-дан бостандық» (freedom from). Адамның әрекетіне сыртқы кедергілердің, мәжбүрлеудің, басқа адамдардың немесе мемлекеттің араласуының болмауын білдіреді. Классикалық либерализмнің негізі.</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">«Оң еркіндік» (Positive Freedom)</h3>
+                    <p class="text-lg leading-relaxed">Бұл «...-үшін бостандық» (freedom to). Адамның өз мақсаттарына жету, өз потенциалын жүзеге асыру, өзін-өзі басқару қабілеті мен мүмкіндігінің болуын талап етеді. Әлеуметтік құқықтармен (білім, денсаулық) байланысты.</p>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-gray-900 mb-4 text-center">Еркіндіктің Саяси-Әлеуметтік Формалары:</h3>
+            <ul class="list-disc list-inside space-y-2 mb-8 pl-4 text-lg max-w-xl mx-auto">
+                <li><strong>Саяси бостандық:</strong> Мемлекетті басқаруға қатысу, үкіметтің әрекетін сынау құқығы.</li>
+                <li><strong>Ұлттық бостандық (Тәуелсіздік):</strong> Ұлттың өз тағдырын өзі анықтау, дербес мемлекет құру құқығы.</li>
+                <li><strong>Жеке бостандық:</strong> Адамның табиғи құқықтарымен (өмір сүру, жеке бас бостандығы) қорғалған өмір саласы.</li>
+                <li><strong>Сөз және сөз бостандығы:</strong> Өз пікірін, ақпаратты еркін айту, тарату және алу құқығы.</li>
+            </ul>
+        </section>
+
+        <!-- Section 2.4: Kazakh Philosophy --><section id="kazakh-philosophy" class="bg-white rounded-xl shadow-xl p-8 md:p-12 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-8 text-center">
+                Қазақ Философиясындағы Еркіндік: Абай және Алаш
+            </h2>
+            <p class="mb-8 text-lg leading-relaxed text-center max-w-3xl mx-auto">
+                Қазақ философиясында еркіндік мәселесі жеке тұлғаның рухани кемелденуі және ұлт-азаттық күресі арқылы қарастырылды.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Абай Құнанбайұлының «Толық Адам»</h3>
+                    <p class="mb-4 text-lg leading-relaxed">
+                        Абай үшін нағыз еркіндік – бұл саяси немесе сыртқы бостандық қана емес, ең алдымен, адамның <strong>ішкі рухани еркіндігі</strong>. «Толық адам» – бұл ақыл, қайрат, жүректі тең ұстаған, нәпсінің құлдығынан арылған тұлға. Бұл – шынайы <strong>«адам болу»</strong> (ізгілікке жету) еркіндігі.
+                    </p>
+                </div>
+                <div>
+                    <img src="abai.jpg" alt="Абай Құнанбайұлы" class="rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center md:flex-row-reverse">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Алаш Қайраткерлері және Ұлттық Бостандық</h3>
+                    <p class="mb-4 text-lg leading-relaxed">
+                        ХХ ғасыр басындағы <strong>Алаш қайраткерлерінің</strong> философиясы «теріс» және саяси еркіндікке бағытталды. Олар үшін бірінші кезектегі мақсат – <strong>ұлттық бостандық</strong> (тәуелсіздік) болды, отаршылдық саясаттан арылуды көздеді.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Алаш ойшылдары үшін ұлттық тәуелсіздік – қазақ халқының Абай армандаған «толық адам» деңгейіне жетуі үшін қажетті <strong>алғышарт</strong> болды.
+                    </p>
+                </div>
+                <div>
+                    <img src="kazakh.jpg" alt="Қазақ халқының тарихи суреті" class="rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 w-full h-64 object-cover">
+                </div>
+            </div>
+            <p class="mt-8 text-lg leading-relaxed text-center max-w-3xl mx-auto">
+                Осылайша, Абайдың рухани еркіндігі мен Алаштың саяси бостандық идеялары бір-бірін толықтыратын, қазақ философиясындағы еркіндік туралы біртұтас ілімді құрайды.
+            </p>
+        </section>
+
+        <!-- Conclusion --><section id="conclusion" class="bg-gradient-to-br from-blue-700 to-indigo-700 text-white rounded-xl shadow-2xl p-8 md:p-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                ҚОРЫТЫНДЫ: Еркіндік пен Этиканың Диалектикасы
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                Этикасыз еркіндік – анархия мен абсурдқа, ал еркіндіксіз этика – құлдық пен конформизмге алып келеді.
+                Адамның кемелденуі осы екі ұғымның диалектикалық бірлігінде жатыр.
+            </p>
+            <p class="mb-4 text-lg leading-relaxed max-w-3xl mx-auto">
+                Бұл синтез қазақ философиясында айқын көрініс табады: Алаш қайраткерлерінің ұлттық, саяси еркіндік үшін күресі мен Абайдың «толық адам» тұжырымдамасындағы ішкі, рухани, этикалық кемелдену идеялары бір-бірін толықтырады. Қазіргі Қазақстанның «Рухани жаңғыру» философиясы – осы құндылықтарды ұштастыра отырып, жауапкершілігі жоғары, рухани еркін қоғам құруды мақсат етеді.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Scroll to Top Button --><button class="scroll-to-top" onclick="scrollToTop()">
+        &uarr;
+    </button>
+
+    <!-- Footer --><footer class="bg-gray-800 text-white py-8 text-center mt-12">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 Бостандық Философиясы. Барлық құқықтар қорғалған.</p>
+            <p class="mt-2 text-sm">Философиялық зерттеу және талдау негізінде жасалған.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Show/hide scroll to top button
+        const scrollToTopButton = document.querySelector('.scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
